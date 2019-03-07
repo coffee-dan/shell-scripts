@@ -1,7 +1,9 @@
 #!/bin/bash
+echo Translating .JPG and the like to lowercase \(i.e. .jpg\)
+rename 's/\.[^.]$/.\L$1/gi' *
 echo Remove single quotes and commas
-rename "s/[',]//g" *
-echo Substituting & with and
+rename "s/[',!]//g" *
+echo Substituting \& with and
 rename 's/\&/and/g' *
 echo Substituting blank spaces with underscores
 rename 's/\s/_/g' *
