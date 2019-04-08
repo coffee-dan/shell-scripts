@@ -1,4 +1,9 @@
 # System specific scripts
 prog-lang-sc.sh
 windows-home-sc.sh
-unknown-command.sh
+
+# Testing directory
+Testing/
+
+# Depreciated directory
+Depreciated/
