@@ -32,7 +32,7 @@ def processFile(file_name):
 #main
 #change into user specified directory
 def usage():
-    print('usage: clean_filenames [[[directory_name] | [-help]]')
+    print('usage: clean_filenames [[[directory_name] | [--help]]')
 
 if len(sys.argv) > 1:
     if sys.argv[1] == '--help':
@@ -41,16 +41,20 @@ if len(sys.argv) > 1:
 
     if os.chdir(sys.argv[1]) != -1:
         #list current directory before
-        print(os.listdir('.'))
+        print(*os.listdir('.'), sep='\n')
+        print()
         for root, dirs, files in os.walk('.'):
             for name in files:
                 os.system('' + 'mv ' + ' ' + '\'' + name +  '\'' +  ' ' +  '\'' + processFile(name) +  '\'' )
                 # os.system('clear') 
                 # os.rename(name, processFile(name))
+        #list current directory after
+        #print(os.listdir('.'))
+        print()
+        print(*os.listdir('.'), sep='\n')
     else:
         print('ERROR:')
-    #list current directory after
-    print(os.listdir('.'))
     
 else:
     usage()
+
