@@ -45,9 +45,10 @@ if len(sys.argv) > 1:
         print()
         for root, dirs, files in os.walk('.'):
             for name in files:
-                os.system('' + 'mv ' + ' ' + '\'' + name +  '\'' +  ' ' +  '\'' + processFile(name) +  '\'' )
+                #os.system('' + 'mv ' + ' ' + '\'' + name +  '\'' +  ' ' +  '\'' + processFile(name) +  '\'' )
                 # os.system('clear') 
-                # os.rename(name, processFile(name))
+                os.rename(name, processFile(name))
+                os.system('clear')
         #list current directory after
         #print(os.listdir('.'))
         print()
