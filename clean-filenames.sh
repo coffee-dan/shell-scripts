@@ -1,6 +1,6 @@
-#!/bin/bash
+#/bin/bash
 echo Translating .JPG and the like to lowercase \(i.e. .jpg\)
-rename -v 's/\.[^.]$/.\L$1/g' *
+rename -v 's/\.([^.]+)$/.\L$1/g' * 
 echo Remove single quotes and commas
 rename -v "s/[',!?]//g" *
 echo Substituting \& with and
